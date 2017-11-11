@@ -1,0 +1,30 @@
+{
+  "name": "waste-management",
+  "version": "0.0.1",
+  "description": "Waste Management by Plusdatum",
+  "engines": {
+    "node": "6.11.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "ejs": "2.5.6",
+    "express": "4.15.2"
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plusdatum/waste.git"
+  },
+  "keywords": [
+    "plusdatum",
+    "waste management"
+  ],
+  "license": "GNU General Public License v3.0"
+}
