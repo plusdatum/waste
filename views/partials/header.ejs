@@ -18,11 +18,3 @@
       padding: 0;
    }
 </style>
-<script>
-  $(function () {
-    var socket = io();
-    socket.on('messages', function(data){
-       console.log(data);
-    });
-  });
-</script>
