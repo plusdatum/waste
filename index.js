@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -11,6 +13,10 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
   response.render('pages/index');
+});
+
+io.on('connection', function(socket){
+  socket.emit('messages', "Hi!");
 });
 
 app.listen(app.get('port'), function() {
