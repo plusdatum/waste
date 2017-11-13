@@ -2,8 +2,6 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 
-const io = socketIO(server);
-
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -15,6 +13,8 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
 });
+
+const io = socketIO(app);
 
 io.on('connection', (socket) => {
   console.log('Client connected');
