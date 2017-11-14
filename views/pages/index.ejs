@@ -19,6 +19,7 @@
    }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_pwJMzM3GRzJAFhIYOeThYGpIVp1W5pg&callback=initMap" async defer></script>
+<% include ../partials/footer.ejs %>
 <script src="/socket.io/socket.io.js"></script>
 <script>
    var socket = io();
@@ -28,6 +29,5 @@
      el.innerHTML = timeString;
    });
 </script>
-<% include ../partials/footer.ejs %>
 </body>
 </html>
