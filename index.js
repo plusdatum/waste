@@ -2,6 +2,7 @@ var express = require('express');
 var app     = express();
 var server  = require('http').Server(app);
 var io      = require('socket.io')(server);
+var weather = require('weather-js');
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
@@ -17,6 +18,16 @@ app.get('/', function(request, response) {
 io.on('connection', function(socket){
    console.log("--> Usuario conectado");
 })
+
+weather.find({
+   search: 'San Francisco, CA',
+   degreeType: 'F',
+   function(err, result){
+      if(err) console.log(err);
+      console.log(JSON.stringify(result, null, 2));
+   }
+});
+
 setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
 
 server.listen(app.get('port'), function() {
