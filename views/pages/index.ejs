@@ -35,7 +35,7 @@
 
    function getWeather(){
       $.simpleWeather({
-         location: '02135',
+         location: 'Bogota, CO',
          unit: 'c',
          success: function(weather) {
             html = weather.city+', '+weather.temp+'&deg;'+weather.units.temp;            
