@@ -38,7 +38,7 @@
          location: '02135',
          unit: 'c',
          success: function(weather) {
-            html = weaterh.city+', '+weather.temp+'&deg;'+weather.units.temp;            
+            html = weather.city+', '+weather.temp+'&deg;'+weather.units.temp;            
   
             $("#weather").html(html);
          },
