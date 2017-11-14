@@ -17,16 +17,15 @@ app.get('/', function(request, response) {
 
 io.on('connection', function(socket){
    console.log("--> Usuario conectado");
+   weather.find({
+      search: 'San Francisco, CA',
+      degreeType: 'F',
+      function(err, result){
+         if(err) console.log(err);
+         console.log(JSON.stringify(result, null, 2));
+      }
+   });
 })
-
-weather.find({
-   search: 'San Francisco, CA',
-   degreeType: 'F',
-   function(err, result){
-      if(err) console.log(err);
-      console.log(JSON.stringify(result, null, 2));
-   }
-});
 
 setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
 
