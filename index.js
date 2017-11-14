@@ -14,24 +14,12 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
 });
-var resultWeather;
-
-weather.find({
-      search: 'San Francisco, CA',
-      degreeType: 'F',
-      function(err, result){
-         if(err) console.log(err);
-
-         resultWeather = JSON.stringify(result, null, 2);
-      }
-   });
 
 io.on('connection', function(socket){
    console.log("--> Usuario conectado");   
 })
 
 setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
-setinterval(() => io.emit('weather', resultWeather, 2000);
 
 server.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
