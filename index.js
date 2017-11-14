@@ -4,6 +4,8 @@ var server  = require('http').Server(app);
 var io      = require('socket.io')(server);
 var weather = require('weather-js');
 
+proccess.env.tz = "America/Bogota"
+
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
