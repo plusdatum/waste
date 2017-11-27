@@ -19,7 +19,7 @@ io.on('connection', function(socket){
    console.log("--> Usuario conectado");
 
    socket.on('ubication', function(data){
-      console.log(data);
+      io.sockets.emit('location', data);
    });
 })
 
