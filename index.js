@@ -20,7 +20,7 @@ io.on('connection', function(socket){
 })
 
 io.on('ubication', function(data){
-   io.emit('location', data);
+   console.log("--> Ubicación actual: ' + data);
 });
 
 setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
