@@ -5,8 +5,19 @@
 </head>
 
 <body>
-<% include ../partials/nav.ejs %>
-<div id="map"></div>   
+<div id="wrapper">
+   <% include ../partials/nav.ejs %>
+   
+   <div id="page-content-wrapper">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-12">
+               <div id="map"></div>
+            </div>
+         </div>
+      </div>
+   </div>         
+</div>
 
 <script>      
    var map;
@@ -18,8 +29,11 @@
       });
    }
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_pwJMzM3GRzJAFhIYOeThYGpIVp1W5pg&callback=initMap" async defer></script>
+
 <% include ../partials/footer.ejs %>
+
 <script src="/socket.io/socket.io.js"></script>
 <script>
    var socket = io();
@@ -47,6 +61,11 @@
          }
       });
    }
+
+   $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+   });
 </script>
 </body>
 </html>
