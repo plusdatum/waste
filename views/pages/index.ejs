@@ -62,7 +62,11 @@
    });
 
    socket.on('location', function(data){
-      console.log(data);
+      var marker = new google.maps.Marker({
+         position: {lat: data.latitude, lng: data.longitude},
+         map: map,
+         title: 'Hello World!'
+      });
    });
    
    $(document).ready(function(){
