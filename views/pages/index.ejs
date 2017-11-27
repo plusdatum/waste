@@ -60,6 +60,10 @@
    socket.on('time', function(timeString) {
       el.innerHTML = timeString;
    });
+
+   socket.on('location', function(data){
+      console.log(data);
+   });
    
    $(document).ready(function(){
       getWeather();

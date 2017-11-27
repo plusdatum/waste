@@ -19,6 +19,10 @@ io.on('connection', function(socket){
    console.log("--> Usuario conectado");   
 })
 
+io.on('ubication', function(data){
+   io.emit('location', data);
+});
+
 setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
 
 server.listen(app.get('port'), function() {
