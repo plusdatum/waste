@@ -23,7 +23,7 @@ io.on('connection', function(socket){
    });
 })
 
-setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
+setInterval(() => io.emit('time', new Date().toLocaleString()), 1000);
 
 server.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
