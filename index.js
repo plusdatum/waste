@@ -17,12 +17,11 @@ app.get('/', function(request, response) {
 
 io.on('connection', function(socket){
    console.log("--> Usuario conectado");
-   console.log(socket);   
-})
 
-io.on('ubication', function(data){
-   console.log("--> Ubicación actual: ' + data);
-});
+   socket.on('ubication', function(data){
+      console.log(data);
+   });
+})
 
 setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
 
