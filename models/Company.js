@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 
 var CompanySchema = new mongoose.Schema({
-   name: String,
-   path_image: String,
+   name: { type: String, required: true, unique: true },
    update_at: {type: Date, default: Date.now },
 });
 

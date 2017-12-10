@@ -3,11 +3,11 @@ var Schema   = mongoose.Schema;
 var Company  = mongoose.model('Company');
 
 var BranchSchema = new Schema({
-   address: String,
-   phone_1: String,
+   address: { type: String, required: true },
+   phone_1: { type: String, required: true },
    phone_2: String,
    phone_3: String,
-   email: String,
+   email: { type: String, required: true },
    is_main: Boolean,
    company: { type: Schema.ObjectId, ref: 'Company'}
 });
