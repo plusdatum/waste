@@ -17,18 +17,4 @@ routes.post('/', function(req, res, next){
    });
 });
 
-router.get('/:id', function(req, res, next){
-   Company.findById(req.params.id, function(err, post){
-      if(err) return next(err);
-      res.json(post)
-   });
-});
-
-router.put('/:id', function(req, res, next){
-   Company.findByIdAndUpdate(req.params.id, req.body, function(err, post){
-      if(err) return next(err);
-      res.json(post);
-   });
-});
-
 module.exports = router;
