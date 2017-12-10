@@ -12,7 +12,7 @@ router.get('/', function(req, res, next){
 
 router.post('/', function(req, res, next){
    Company.create(req.body, function(err, post){
-   	  console.log(req.body);
+   	  console.log(req);
       if(err) return next(err);
       res.json(post);
    });
