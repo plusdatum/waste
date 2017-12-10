@@ -36,8 +36,9 @@ app.set('view engine', 'ejs');
 
 // Routes
 var companies = require('./routes/companies');
+var branchs   = require('./routes/branchs');
 app.use('/companies', companies);
-
+app.use('/branchs', branchs);
 
 app.get('/', function(request, response) {
   response.render('pages/index');
