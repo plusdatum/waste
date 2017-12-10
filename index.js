@@ -1,11 +1,11 @@
-var session = require('cookie-session');
-var express = require('express');
-var app     = express();
-var server  = require('http').Server(app);
-var io      = require('socket.io')(server);
-var weather = require('weather-js');
-var helmet  = require('helmet');
-
+var session    = require('cookie-session');
+var express    = require('express');
+var app        = express();
+var server     = require('http').Server(app);
+var io         = require('socket.io')(server);
+var weather    = require('weather-js');
+var helmet     = require('helmet');
+var mongoose   = require('mongoose');
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000);
 
 app.use(helmet());
@@ -21,10 +21,13 @@ app.use(session({
    })
 );
 
+mongoose.Promise = global.Promise;
+mongoose.connect = ('mongodb://plusdatum:Loana2012@ds135876.mlab.com:35876/waste-management')
+   .then(() => console.log('conexión exitosa'))
+   .catch((err) => console.error(err));
+
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
