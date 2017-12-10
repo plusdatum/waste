@@ -1,7 +1,7 @@
 var express  = require('express');
 var router   = express.Router();
 var mongoose = require('mongoose');
-var Company  = require('../models/Brach.js');
+var Branch   = require('../models/Branch.js');
 
 router.get('/', function(req, res, next){
    Branch.find(function (err, branchs){
