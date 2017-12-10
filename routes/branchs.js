@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Company  = require('../models/Brach.js');
 
 router.get('/', function(req, res, next){
-   Brach.find(function (err, branchs){
+   Branch.find(function (err, branchs){
       if(err) return next(err);
       res.json(branchs);
    });
