@@ -29,6 +29,7 @@ mongoose.connect('mongodb://waste:Loana2012@ds135876.mlab.com:35876/waste-manage
 
 // Routes
 var companies = require('./routes/companies');
+companies(app);
 app.use('/companies', companies);
 
 
