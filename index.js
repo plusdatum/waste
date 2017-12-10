@@ -34,7 +34,7 @@ app.use('/companies', companies);
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
