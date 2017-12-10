@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://waste:Loana2012@ds135876.mlab.com:35876/waste-management')
-   .then(() => console.log('--> Conexión exitosa'));
+   .then(() => console.log('--> Conexión exitosa'))
    .catch((err) => console.error(err));
 
 app.use(helmet());
