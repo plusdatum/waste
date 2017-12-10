@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
+var Schema   = mongoose.Schema;
 var Company  = mongoose.model('Company');
 
-var BranchSchema = new mongoose.Schema({
+var BranchSchema = new Schema({
    address: String,
    phone_1: String,
    phone_2: String,
