@@ -14,8 +14,8 @@ mongoose.connect('mongodb://waste:Loana2012@ds135876.mlab.com:35876/waste-manage
    .then(() => console.log('conexión exitosa'))
    .catch((err) => console.error(err));
 
-app.use(helmet());
-app.use(session({
+//app.use(helmet());
+//app.use(session({
    name: 'session',
    keys: ['key1', 'key2'],
    cookie: { secure: true,
