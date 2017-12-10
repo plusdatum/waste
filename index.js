@@ -6,7 +6,13 @@ var io         = require('socket.io')(server);
 var weather    = require('weather-js');
 var helmet     = require('helmet');
 var mongoose   = require('mongoose');
+var router     = express.Router();
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000);
+
+mongoose.Promise = global.Promise;
+mongoose.connect = ('mongodb://plusdatum:Loana2012@ds135876.mlab.com:35876/waste-management')
+   .then(() => console.log('conexión exitosa'))
+   .catch((err) => console.error(err));
 
 app.use(helmet());
 app.use(session({
@@ -21,10 +27,10 @@ app.use(session({
    })
 );
 
-mongoose.Promise = global.Promise;
-mongoose.connect = ('mongodb://plusdatum:Loana2012@ds135876.mlab.com:35876/waste-management')
-   .then(() => console.log('conexión exitosa'))
-   .catch((err) => console.error(err));
+// Routes
+var companies = require('./routes/companies');
+app.use('/companies', companies);
+
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
