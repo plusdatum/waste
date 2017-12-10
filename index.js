@@ -16,16 +16,16 @@ mongoose.connect('mongodb://waste:Loana2012@ds135876.mlab.com:35876/waste-manage
 
 //app.use(helmet());
 //app.use(session({
-   name: 'session',
-   keys: ['key1', 'key2'],
-   cookie: { secure: true,
-             httpOnly: true,
-             domain: 'herokuapp.com',
-             path: 'foo/bar',
-             expires: expiryDate
-           }
-   })
-);
+//   name: 'session',
+//   keys: ['key1', 'key2'],
+//   cookie: { secure: true,
+//             httpOnly: true,
+//              domain: 'herokuapp.com',
+//              path: 'foo/bar',
+//              expires: expiryDate
+//            }
+//    })
+// );
 
 // Routes
 var companies = require('./routes/companies');
