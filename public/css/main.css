@@ -189,3 +189,7 @@ a.article, a.article:hover {
 #logo{
    height: 117px;
 }
+
+#information{
+    background: #2ecc71;
+}
