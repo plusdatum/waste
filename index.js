@@ -6,8 +6,8 @@ var io         = require('socket.io')(server);
 var weather    = require('weather-js');
 var helmet     = require('helmet');
 var mongoose   = require('mongoose');
-var router     = express.Router();
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000);
+var bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://waste:Loana2012@ds135876.mlab.com:35876/waste-management')
@@ -34,6 +34,7 @@ app.use('/companies', companies);
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
