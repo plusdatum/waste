@@ -27,17 +27,17 @@ mongoose.connect('mongodb://waste:Loana2012@ds135876.mlab.com:35876/waste-manage
 //    })
 // );
 
-// Routes
-var companies = require('./routes/companies');
-companies(app);
-app.use('/companies', companies);
-
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: true }));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+// Routes
+var companies = require('./routes/companies');
+app.use('/companies', companies);
+
 
 app.get('/', function(request, response) {
   response.render('pages/index');
