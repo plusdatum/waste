@@ -50,7 +50,7 @@ a, a:hover, a:focus {
     left: -250px;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
+    background: darkcyan;
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
@@ -66,7 +66,7 @@ a, a:hover, a:focus {
     height: 35px;
     line-height: 35px;
     text-align: center;
-    background: #7386D5;
+    background: darkcyan;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -91,7 +91,7 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: darkcyan;
 }
 
 #sidebar ul.components {
@@ -184,4 +184,8 @@ a.article, a.article:hover {
 
 #information {
    margin-top: -20px;
+}
+
+#logo{
+   height: 117px;
 }
