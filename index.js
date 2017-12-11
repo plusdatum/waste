@@ -42,7 +42,7 @@ app.use('/api/branchs', branchs);
 
 // Vistas
 app.get('/', function(request, response) {
-  response.render('pages/index');
+  response.render('index');
 });
 
 app.get('/branchs', function(request, response){
