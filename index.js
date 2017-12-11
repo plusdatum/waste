@@ -8,6 +8,7 @@ var helmet     = require('helmet');
 var mongoose   = require('mongoose');
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000);
 var bodyParser = require('body-parser');
+var engine     = require('ejs-mate');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://waste:Loana2012@ds135876.mlab.com:35876/waste-management')
@@ -42,7 +43,7 @@ app.use('/api/branchs', branchs);
 
 // Vistas
 app.get('/', function(request, response) {
-  response.render('index');
+  response.render('pages/index');
 });
 
 app.get('/branchs', function(request, response){
