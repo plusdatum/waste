@@ -3,7 +3,7 @@ angular.module('angularWaste', []);
 function branchController($scope, $http){
    $scope.formData = {};
 
-   $http.get('/branchs')
+   $http.get('/api/branchs')
       .success(function(data){
          $scope.branchs = data;
       })
@@ -12,7 +12,7 @@ function branchController($scope, $http){
       });
 
    $scope.createBranch = function(){
-      $http.post('/branchs', $scope.formData)
+      $http.post('/api/branchs', $scope.formData)
          .success(function(data){
             $scope.formData = {};
             $scope.branchs = data;

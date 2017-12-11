@@ -37,11 +37,16 @@ app.set('view engine', 'ejs');
 // Routes
 var companies = require('./routes/companies');
 var branchs   = require('./routes/branchs');
-app.use('/companies', companies);
-app.use('/branchs', branchs);
+app.use('/api/companies', companies);
+app.use('/api/branchs', branchs);
 
+// Vistas
 app.get('/', function(request, response) {
   response.render('pages/index');
+});
+
+app.get('/branchs', function(request, response){
+   response.render('pages/branchs');
 });
 
 io.on('connection', function(socket){
