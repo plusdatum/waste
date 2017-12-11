@@ -17,19 +17,25 @@
                <div class="input-group input-group-sm">
                   <label for="nameBranch">Nombre</label>
                   <input type="text" class="form-control" placeholder="Nombre" id="nameBranch" ng-model="formData.name">
+               </div>
+               <div class="input-group input-group-sm">
                   <label for="addressBranch">Dirección</label>
                   <input type="text" class="form-control" placeholder="Dirección" id="addressBranch" ng-model="formData.address">
+               </div>
+               <div class="input-group input-group-sm">
                   <label for="phonesBranch">Teléfonos</label>
                   <input type="text" class="form-control" placeholder="Teléfono" id="phonesBranch" ng-model="formData.phone_1">
                   <input type="text" class="form-control" placeholder="Teléfono" id="phonesBranch" ng-model="formData.phone_2">
                   <input type="text" class="form-control" placeholder="Teléfono" id="phonesBranch" ng-model="formData.phone_3">
+               </div>
+               <div class="input-group input-group-sm">
                   <label for="emailBranch">Email</label>
                   <input type="email" class="form-control" placeholder="Email" id="emailBranch" ng-model="formData.email">
-                  <div class="checkbox">
-                     <label>
-                        <input type="checkbox" ng-model="formData.is_main"> Oficina principal
-                     </label>
-                  </div>
+               </div>
+               <div class="checkbox">
+                  <label>
+                     <input type="checkbox" ng-model="formData.is_main"> Oficina principal
+                  </label>
                </div>
                <button type="button" class="btn btn-primary" ng-click="createBranch">Guardar</button>
             </form>
