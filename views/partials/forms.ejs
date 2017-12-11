@@ -12,7 +12,16 @@
 	           </label>
             </div>
          </div>
+         <div id="newBranch">
+            <form>
+               <div class="form-group">
+                  <input type="text" class="form-control input-lg text-center" placeholder="Nombre" ng-model="formData.name">
+               </div>
+               <button type="button" class="btn btn-primary" ng-click="createBranch">Guardar</button>
+            </form>
+         </div>
          <div class="modal-footer">
+            <button type="button" class="btn btn-success">Nuevo</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
          </div>
       </div>
