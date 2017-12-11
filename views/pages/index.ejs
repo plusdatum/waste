@@ -71,11 +71,6 @@
    $(document).ready(function(){
       getWeather();
       setInterval(getWeather, 600000);
-
-      $('#newBranch').hide();
-
-      $("#branchNew").on( "click", function() {
-         $('#newBranch').show();
      });
 
       $("#sidebar").mCustomScrollbar({

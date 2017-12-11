@@ -1,5 +1,3 @@
-angular.module('angularWaste', []);
-
 function branchController($scope, $http){
    $scope.formData = {};
 
